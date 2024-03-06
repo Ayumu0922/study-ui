@@ -15,31 +15,31 @@ const SidebarContainer = () => {
   const sidebarItems = [
     {
       name: "患者一覧",
-      path: "/patients",
+      path: "/dashboard/patients",
       icon: <FaUsers size={30} />,
       alert: false,
     },
     {
       name: "フォルダ",
-      path: "/folders",
+      path: "/dashboard/folders",
       icon: <FaFolderOpen size={30} />,
       alert: false,
     },
     {
       name: "画像解析",
-      path: "/analytics",
+      path: "/dashboard/analytics",
       icon: <MdAnalytics size={30} />,
       alert: false,
     },
     {
       name: "設定",
-      path: "/settings",
+      path: "/dashboard/settings",
       icon: <CiSettings size={30} />,
       alert: false,
     },
     {
       name: "ヘルプ",
-      path: "/help",
+      path: "/dashboard/help",
       icon: <IoMdHelpCircle size={30} />,
       alert: true,
     },
