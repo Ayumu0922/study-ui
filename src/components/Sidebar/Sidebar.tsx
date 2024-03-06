@@ -12,15 +12,15 @@ const SidebarContext = createContext(true);
 const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const [expanded, setExpanded] = useState(true);
   return (
-    <aside className=" h-screen">
-      <nav className=" h-full flex  flex-col bg-white border-r shadow-sm">
+    <aside className=" h-screen z-10">
+      <nav className=" h-full flex  flex-col bg-white border-r   shadow-lg">
         <div className="p-4 pb-2 flex justify-between items-center">
           <h1
-            className={`overflow-hidden transition-all ${
+            className={`overflow-hidden transition-all font-bold ${
               expanded ? "w-32" : "w-0"
             }`}
           >
-            My App
+            DICOM VIEWER
           </h1>
           <button
             onClick={() => setExpanded((curr) => !curr)}
@@ -37,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         <SidebarContext.Provider value={expanded}>
           <ul className=" flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
-        <div className=" border-t flex p-3">
+        <div className=" border-t flex  p-5">
           <Image
             src="/default_avater.jpg"
             alt="avater"
@@ -47,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
           />
           <div
             className={`flex justify-between items-center overflow-hidden transition-all ${
-              expanded ? "w-52 ml-3" : "w-0"
+              expanded ? "w-52 ml-3" : " w-0"
             }`}
           >
             <div className=" leading-4">
@@ -75,14 +75,15 @@ export function SidebarItem({
   return (
     <li
       className={`
-        relative flex items-center py-2 px-3 my-1
-        font-medium rounded-md cursor-pointer
+        relative flex items-center  px-3 my-1 font-bold
+         rounded-md cursor-pointer
         transition-colors group
         ${
           active
             ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
             : "hover:bg-indigo-50 text-gray-600"
         }
+        ${expanded ? "py-4" : "py-3"}
     `}
       onClick={onClick}
     >
